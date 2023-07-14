@@ -1,0 +1,24 @@
+.popup-login__save {
+    max-width: 358px;
+    min-height: 50px;
+    width: 100%;
+    margin: 216px auto 0;
+    padding: 0;
+  
+    border: none;
+    border-radius: 2px;
+  
+    color: #000000;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+  
+    background-color: #ffffff;
+  
+    cursor: pointer;
+}
+
+.popup-login__save:hover {
+    opacity: 80%;
+    transition: 1s;
+  }

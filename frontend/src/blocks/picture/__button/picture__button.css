@@ -1,0 +1,23 @@
+.picture__button {
+  margin-bottom: 3px;
+  min-width: 22px;
+  min-height: 19px;
+  padding: 0;
+
+  background-image: url(../../../images/Like.svg);
+  background-repeat: no-repeat;
+  background-color: #FFFFFF;
+
+  border: none;
+
+  cursor: pointer;
+}
+
+.picture__button:hover {
+  opacity: 60%;
+  transition: 1s;
+}
+
+.picture__button_active {
+  background-image: url(../../../images/BlackLike.svg);
+}

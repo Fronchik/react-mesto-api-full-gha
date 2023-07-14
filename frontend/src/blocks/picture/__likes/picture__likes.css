@@ -1,0 +1,13 @@
+.picture__likes {
+  min-width: 10px;
+  max-height: 16px;
+  padding: 0;
+
+  text-align: center;
+
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  font-style: normal;
+  font-weight: 400;
+}

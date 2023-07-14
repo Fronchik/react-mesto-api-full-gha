@@ -1,0 +1,25 @@
+.popup-login__check {
+    max-width: 358px;
+    min-height: 17px;
+    width: 100%;
+    margin: 15px auto 0;
+    padding: 0;
+  
+    border: none;
+    border-radius: 2px;
+  
+    color: #ffffff;
+    background-color: #000000;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    text-decoration: none;
+  
+    cursor: pointer;
+}
+
+.popup-login__check:hover {
+    opacity: 80%;
+    transition: 1s;
+  }

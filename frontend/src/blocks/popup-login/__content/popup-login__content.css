@@ -1,0 +1,8 @@
+.popup-login__content {
+    max-width: 358px;
+    min-height: 429px;
+    width: 100%;
+    margin-top: 60px;
+  
+    background-color: black;
+}

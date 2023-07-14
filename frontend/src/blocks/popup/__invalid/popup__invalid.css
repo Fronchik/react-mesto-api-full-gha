@@ -1,0 +1,13 @@
+.popup__invalid {
+  opacity: 50%;
+  color: rgba(0, 0, 0);
+  background-color: #FFFFFF;
+  border-width: 1px;
+  border-color: rgba(0, 0, 0, 0.5);
+
+  cursor: default;
+}
+
+.popup__invalid:hover {
+  pointer-events: none;
+}

@@ -1,0 +1,19 @@
+.pictures {
+  margin: 0 auto;
+  max-width: 880px;
+  width: 100%;
+
+  align-self: center;
+}
+
+@media (max-width: 1024px) {
+  .pictures {
+    max-width: 581px;
+  }
+}
+
+@media (max-width: 768px) {
+  .pictures {
+    max-width: 282px;
+  }
+}

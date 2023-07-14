@@ -1,0 +1,21 @@
+.error {
+  display: block;
+  max-width: 358px;
+  min-height: 25px;
+  padding: 0;
+  margin: 5px 0 0 36px;
+  box-sizing: border-box;
+
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 12px;
+
+  color: #FF0000;
+}
+
+@media (max-width: 768px) {
+  .error {
+    max-width: 238px;
+    margin-left: 22px;
+  }
+}

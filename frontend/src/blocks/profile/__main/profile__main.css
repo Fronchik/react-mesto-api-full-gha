@@ -1,0 +1,10 @@
+.profile__main {
+  position: relative;
+  max-width: 294px;
+}
+
+@media (max-width: 768px) {
+  .profile__main {
+    width: 189px;
+  }
+}

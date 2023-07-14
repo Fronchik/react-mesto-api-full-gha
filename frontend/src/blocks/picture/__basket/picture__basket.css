@@ -1,0 +1,21 @@
+.picture__basket {
+    margin-top: 20px;
+    margin-left: 244px;
+    min-width: 18px;
+    min-height: 19px;
+    position: absolute;
+    padding: 0;
+
+    background-image: url(../../../images/Basket.svg);
+    background-repeat: no-repeat;
+    background-color: transparent;
+
+    border: none;
+
+    cursor: pointer;
+}
+
+.picture__basket:hover {
+    opacity: 60%;
+    transition: 1s;
+}

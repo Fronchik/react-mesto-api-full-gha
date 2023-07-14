@@ -1,0 +1,17 @@
+.popup-login__enter {
+    min-width: 114px;
+    min-height: 22px;
+    padding: 0;
+
+    text-decoration: none;
+
+    color: #FFFFFF; 
+  
+    border: none;
+    cursor: pointer;
+}
+
+.popup-login__enter:hover {
+    opacity: 60%;
+    transition: 1s;
+  }

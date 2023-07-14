@@ -1,0 +1,12 @@
+.popup-info {
+    display: flex;
+    position: fixed;
+    visibility: hidden;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}

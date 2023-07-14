@@ -1,0 +1,11 @@
+.profile__plus {
+  margin: 0 auto;
+  max-width: 22px;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .profile__plus {
+    max-width: 16px;
+  }
+}
