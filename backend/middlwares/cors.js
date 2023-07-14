@@ -2,6 +2,7 @@
 const allowedCors = [
   'localhost:3000',
   'fronchik.nomoredomains.work',
+  'api.fronchik.nomoredomains.work',
 ];
 
 const corsHandler = (req, res, next) => {
