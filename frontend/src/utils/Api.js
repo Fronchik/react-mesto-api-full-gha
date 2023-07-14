@@ -80,7 +80,7 @@ class Api {
 }
 
 export const api = new Api({
-  baseUrl: 'https://mesto.nomoreparties.co/v1/cohort-62',
+  baseUrl: 'https://api.fronchik.nomoredomains.work',
   headers: {
     authorization: '13dd71e2-a4cb-4a97-bac3-d4ec058f8440',
     'Content-Type': 'application/json'
