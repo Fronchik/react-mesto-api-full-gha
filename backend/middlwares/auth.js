@@ -7,6 +7,7 @@ const auth = (req, res, next) => {
   // проверка на отсутствие токена
   if (!bearerToken || !bearerToken.startsWith('Bearer ')) {
     next(new Unauthorized());
+    return;
   }
 
   const token = bearerToken.replace('Bearer ', '');
