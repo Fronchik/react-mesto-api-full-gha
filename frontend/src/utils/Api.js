@@ -1,7 +1,6 @@
 class Api {
-  constructor({ baseUrl, headers }) {
+  constructor(baseUrl) {
     this.baseUrl = baseUrl;
-    this.headers = headers;
   }
 
   _checkResponse(res) {
@@ -17,17 +16,24 @@ class Api {
     return fetch(url, options).then(this._checkResponse);
   }
 
+  _headers() {
+    return {
+      "Authorization": `Bearer ${localStorage.getItem('token')}`,
+      'Content-Type': 'application/json'
+    }
+  }
+
   // Загрузка информации о пользователе с сервера
   getProfileInfo() {
     return this._request(this.baseUrl + '/users/me', {
-      headers: this.headers
+      headers: this._headers()
     });
   }
 
   //  Загрузка карточек с сервера
   getInitialCards() {
     return this._request(this.baseUrl + '/cards', {
-      headers: this.headers
+      headers: this._headers()
     });
   }
 
@@ -35,7 +41,7 @@ class Api {
   setUserInfo(name, about) {
     return this._request(this.baseUrl + '/users/me', {
       method: 'PATCH',
-      headers: this.headers,
+      headers: this._headers(),
       body: JSON.stringify({
         name, about
       })
@@ -46,7 +52,7 @@ class Api {
   addNewCard(name, link) {
     return this._request(this.baseUrl + '/cards', {
       method: 'POST',
-      headers: this.headers,
+      headers: this._headers(),
       body: JSON.stringify({
         name, link
       })
@@ -57,7 +63,7 @@ class Api {
   deleteCard(cardId) {
     return this._request(this.baseUrl + `/cards/${cardId}`, {
       method: 'DELETE',
-      headers: this.headers
+      headers: this._headers(),
     })
   }
 
@@ -65,7 +71,7 @@ class Api {
   changeLikeCardStatus(cardId, isLiked) {
     return this._request(this.baseUrl + `/cards/${cardId}/likes`, {
       method: isLiked ? 'PUT' : 'DELETE',
-      headers: this.headers,
+      headers: this._headers(),
     })
   }
 
@@ -73,16 +79,10 @@ class Api {
   updateUserAvatar(avatar) {
     return this._request(this.baseUrl + '/users/me/avatar', {
       method: 'PATCH',
-      headers: this.headers,
+      headers: this._headers(),
       body: JSON.stringify(avatar)
     })
   }
 }
 
-export const api = new Api({
-  baseUrl: 'https://api.fronchik.nomoredomains.work',
-  headers: {
-    "Authorization": `Bearer ${localStorage.getItem("token")}`,
-    'Content-Type': 'application/json'
-  }
-});
+export const api = new Api('https://api.fronchik.nomoredomains.work');
