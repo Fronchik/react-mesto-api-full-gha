@@ -5,10 +5,10 @@ const Unauthorized = require('../components/Unauthorized');
 const auth = (req, res, next) => {
   const bearerToken = req.headers.authorization;
   // проверка на отсутствие токена
-  if (!bearerToken || !bearerToken.startsWith('Bearer')) {
+  if (!bearerToken || !bearerToken.startsWith('Bearer ')) {
     throw new Unauthorized();
   }
-  const token = bearerToken.replace('Bearer', '');
+  const token = bearerToken.replace('Bearer ', '');
   if (!token) {
     throw new Unauthorized();
   }
