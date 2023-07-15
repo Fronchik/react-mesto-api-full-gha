@@ -35,7 +35,7 @@ function App() {
       .then((result) => {
         setLoggedIn(true);
         setTokenChecked(true);
-        setMyEmail(result.data.email);
+        setMyEmail(result.email);
       })
       .catch((err) => {
         console.log(err);
