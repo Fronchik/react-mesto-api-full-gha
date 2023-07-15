@@ -6,12 +6,10 @@ const auth = (req, res, next) => {
   const bearerToken = req.headers.authorization;
   // проверка на отсутствие токена
   if (!bearerToken || !bearerToken.startsWith('Bearer ')) {
-    throw new Unauthorized();
+    next(new Unauthorized());
   }
+
   const token = bearerToken.replace('Bearer ', '');
-  if (!token) {
-    throw new Unauthorized();
-  }
 
   const { NODE_ENV, JWT_SECRET } = process.env;
 

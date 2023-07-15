@@ -1,5 +1,5 @@
 const Card = require('../models/card');
-const CardNotFound = require('../components/CardNotFound');
+const NotFound = require('../components/NotFound');
 const Forbidden = require('../components/Forbidden');
 const BadRequest = require('../components/BadRequest');
 
@@ -31,12 +31,12 @@ const deleteCardById = (req, res, next) => {
   Card.findById(req.params.cardId)
     .then((cardToDelete) => {
       if (!cardToDelete) {
-        throw new CardNotFound();
+        throw new NotFound();
       }
       if (String(cardToDelete.owner) !== String(req.user._id)) {
         throw new Forbidden();
       }
-      Card.findByIdAndRemove(req.params.cardId)
+      cardToDelete.deleteOne()
         .then(() => {
           res.status(200).send({ message: 'Card deleted successfully' });
         }).catch(next);
@@ -52,7 +52,7 @@ const putLikeCardById = (req, res, next) => {
   )
     .then((card) => {
       if (card === null) {
-        throw new CardNotFound();
+        throw new NotFound();
       } else {
         res.status(200).send(card);
       }
@@ -68,7 +68,7 @@ const deleteLikeCardById = (req, res, next) => {
   )
     .then((card) => {
       if (!card) {
-        throw new CardNotFound();
+        throw new NotFound();
       } else {
         res.status(200).send(card);
       }

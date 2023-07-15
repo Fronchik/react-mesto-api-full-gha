@@ -1,9 +1,8 @@
 const bcrypt = require('bcryptjs');
 const jsonWebToken = require('jsonwebtoken');
 const User = require('../models/user');
-const UserNotFound = require('../components/UserNotFound');
+const NotFound = require('../components/NotFound');
 const Unauthorized = require('../components/Unauthorized');
-const CardNotFound = require('../components/CardNotFound');
 const Conflict = require('../components/Conflict');
 const BadRequest = require('../components/BadRequest');
 
@@ -16,7 +15,7 @@ const getUsersMe = (req, res, next) => {
   User.findById(req.user._id)
     .then((user) => {
       if (!user) {
-        throw new UserNotFound();
+        throw new NotFound();
       }
       res.status(200).send(user);
     }).catch(next);
@@ -26,7 +25,7 @@ const getUserById = (req, res, next) => {
   User.findById(req.params.id)
     .then((user) => {
       if (!user) {
-        throw new UserNotFound();
+        throw new NotFound();
       }
       res.status(200).send(user);
     }).catch(next);
@@ -78,7 +77,7 @@ const updateProfileUser = (req, res, next) => {
   User.findByIdAndUpdate(req.user._id, req.body, { new: true, runValidators: true })
     .then((user) => {
       if (!user) {
-        throw new UserNotFound();
+        throw new NotFound();
       }
       res.status(200).send(user);
     }).catch((err) => {
@@ -95,10 +94,10 @@ const updateAvatarUser = (req, res, next) => {
   const { avatar } = req.body;
   User.findByIdAndUpdate(req.user._id, { avatar }, { new: true })
     .then((user) => {
-      if (user && user.avatar === avatar) {
+      if (user) {
         res.status(200).send(user);
       } else {
-        throw new CardNotFound();
+        throw new NotFound();
       }
     })
     .catch((err) => {

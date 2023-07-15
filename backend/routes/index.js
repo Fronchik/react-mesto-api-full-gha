@@ -2,7 +2,7 @@ const router = require('express').Router();
 const { celebrate, Joi } = require('celebrate');
 const { createUser, login } = require('../controllers/users');
 const auth = require('../middlwares/auth');
-const UserNotFound = require('../components/UserNotFound');
+const NotFound = require('../components/NotFound');
 
 const userRoutes = require('./users');
 const cardRoutes = require('./cards');
@@ -38,7 +38,7 @@ router.use('/users', userRoutes);
 router.use('/cards', cardRoutes);
 
 router.use('*', (req, res, next) => {
-  next(new UserNotFound());
+  next(new NotFound());
 });
 
 module.exports = router;
