@@ -63,17 +63,9 @@ const login = (req, res, next) => {
       bcrypt.compare(String(password), user.password)
         .then((isValidUser) => {
           if (isValidUser) {
-            // создать JWT
-            const jwt = jsonWebToken.sign({
-              _id: user._id,
-            }, 'SECRET');
-            // прикрепить его к куке
-            res.cookie('jwt', jwt, {
-              maxAge: 360000,
-              httpOnly: true,
-              sameSite: true,
-            });
-            res.send({ data: user.toJSON() });
+            // создать JWT token
+            const token = jsonWebToken.sign({ _id: user._id }, 'SECRET');
+            res.send({ data: user.toJSON(), token });
           } else {
             throw new Unauthorized();
           }

@@ -3,10 +3,12 @@ const Unauthorized = require('../components/Unauthorized');
 
 // аутентификация пользователя на основе токена
 const auth = (req, res, next) => {
-  // токен из куки запроса
-  const token = req.cookies.jwt;
-
+  const bearerToken = req.headers.authorization;
   // проверка на отсутствие токена
+  if (!bearerToken || !bearerToken.startsWith('Bearer')) {
+    throw new Unauthorized();
+  }
+  const token = bearerToken.replace('Bearer', '');
   if (!token) {
     throw new Unauthorized();
   }
