@@ -63,8 +63,9 @@ const login = (req, res, next) => {
       bcrypt.compare(String(password), user.password)
         .then((isValidUser) => {
           if (isValidUser) {
+            const { NODE_ENV, JWT_SECRET } = process.env;
             // создать JWT token
-            const token = jsonWebToken.sign({ _id: user._id }, 'SECRET');
+            const token = jsonWebToken.sign({ _id: user._id }, NODE_ENV === 'production' ? JWT_SECRET : 'dev-secret');
             res.send({ data: user.toJSON(), token });
           } else {
             throw new Unauthorized();

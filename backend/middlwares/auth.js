@@ -13,11 +13,13 @@ const auth = (req, res, next) => {
     throw new Unauthorized();
   }
 
+  const { NODE_ENV, JWT_SECRET } = process.env;
+
   // храниться расшифрованная информация из токена
   let payload;
 
   try {
-    payload = jwt.verify(token, 'SECRET');
+    payload = jwt.verify(token, NODE_ENV === 'production' ? JWT_SECRET : 'dev-secret');
   } catch (err) {
     const error = new Unauthorized();
     next(error);
