@@ -1,8 +1,7 @@
 // Массив доменов, с которых разрешены кросс-доменные запросы
 const allowedCors = [
   'http://localhost:3000',
-  'https://fronchik.nomoredomains.work',
-  'https://api.fronchik.nomoredomains.work',
+  'https://mesto.fronchik.com',
 ];
 
 const corsHandler = (req, res, next) => {

@@ -85,4 +85,4 @@ class Api {
   }
 }
 
-export const api = new Api('https://api.fronchik.nomoredomains.work');
+export const api = new Api('https://api.mesto.fronchik.com');
