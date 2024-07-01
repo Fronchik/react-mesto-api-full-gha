@@ -9,4 +9,4 @@
 - Проверка токена.
 - Работа с Local storage.
 
-ссылка на GitHub Pages: https://fronchik.github.io/mesto/
+ссылка: https://mesto.fronchik.com/
