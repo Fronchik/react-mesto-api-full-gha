@@ -15,7 +15,7 @@ function Header({ email, loggedIn, onSignOut }) {
                     <Link to="/" className="popup-login__enter" aria-label="Электронная почта" type="submit">{email} </Link>
                 </div>
                 <div class="popup-login__box-enter">
-                    <a onClick={onSignOut} className="popup-login__enter" aria-label="Кнопка выхода" type="submit">Выйти</a>
+                    <button onClick={onSignOut} className="popup-login__enter" aria-label="Кнопка выхода" type="button">Выйти</button>
                 </div>
             </div>
             }
