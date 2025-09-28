@@ -49,7 +49,7 @@ class Auth {
 }
 
 export const auth = new Auth({
-    baseUrl: 'https://api.mesto.fronchik.com',
+    baseUrl: process.env.REACT_APP_API_URL || 'https://api.mesto.fronchik.com',
     headers: {
         'Content-Type': 'application/json'
     }

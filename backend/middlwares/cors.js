@@ -1,7 +1,7 @@
 // Массив доменов, с которых разрешены кросс-доменные запросы
 const allowedCors = [
-  'http://localhost:3000',
-  'https://mesto.fronchik.com',
+  'localhost:3000',
+  'mesto.fronchik.com',
 ];
 
 const corsHandler = (req, res, next) => {

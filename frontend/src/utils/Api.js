@@ -85,4 +85,4 @@ class Api {
   }
 }
 
-export const api = new Api('https://api.mesto.fronchik.com');
+export const api = new Api(process.env.REACT_APP_API_URL || 'https://api.mesto.fronchik.com');
