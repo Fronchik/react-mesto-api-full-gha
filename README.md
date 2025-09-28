@@ -11,4 +11,9 @@
 - JavaScript
 - React
 
-ссылка: https://mesto.fronchik.com/
+
+Frontend https://mesto.fronchik.com/
+
+Backend https://api.mesto.fronchik.com/
+
+IP 127.0.0.1
