@@ -9,4 +9,10 @@
 - Проверка токена.
 - Работа с Local storage.
 
-ссылка: https://mesto.fronchik.com/
+
+
+Frontend https://mesto.fronchik.com/
+
+Backend https://api.mesto.fronchik.com/
+
+IP 157.90.164.16
