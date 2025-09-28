@@ -28,7 +28,7 @@ jobs:
         with:
           context: ./backend
           push: true
-          tags: registry.fronchik.com/react-mesto-api:latest
+          tags: registry.fronchik.com/mesto-api:latest
 
       - name: Deploy to server
         uses: appleboy/ssh-action@v1.0.0
@@ -37,7 +37,7 @@ jobs:
           username: ${{ secrets.USER }}
           key: ${{ secrets.SSH_KEY }}
           script: |
-            docker pull registry.fronchik.com/react-mesto-api:latest
+            docker pull registry.fronchik.com/mesto-api:latest
             cd /home/${{ secrets.USER }}/fronchik
             docker-compose down mesto-api
             docker-compose up -d mesto-api
